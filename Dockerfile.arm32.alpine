@@ -14,7 +14,8 @@ RUN echo "daemon off;" >> /etc/nginx/nginx.conf \
 # Install Forego
 RUN wget --quiet https://bin.equinox.io/c/ekMN3bCZFUn/forego-stable-linux-arm.tgz && \
 	tar xvf forego-stable-linux-arm.tgz -C /usr/local/bin && \
-	chmod u+x /usr/local/bin/forego
+	chmod u+x /usr/local/bin/forego && \
+	rm -f forego-stable-linux-arm.tgz
 
 ENV DOCKER_GEN_VERSION 0.7.4
 
